@@ -1,5 +1,7 @@
 package letterGrade;
 
+import java.util.Scanner;
+
 public class LetterGrade {
 	
 	public static char scoreConvertToLetter(int score){
@@ -16,6 +18,19 @@ public class LetterGrade {
 		}else{
 			return 'F';
 		}
+	}
+	
+	public static void main(String[] args){
+		Scanner sc=new Scanner(System.in);
+		String isExit;
+		do{
+			System.out.print("Please input the score:");
+			int score=Integer.parseInt(sc.nextLine());
+			System.out.println("Convert the score " + score + " to a letter grade " + scoreConvertToLetter(score));
+			System.out.print("Do you want to exit?(y/n)");
+			isExit = sc.nextLine();
+		}while(!isExit.equals("y"));
+		sc.close();
 	}
 
 }
